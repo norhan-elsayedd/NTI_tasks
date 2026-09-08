@@ -3,13 +3,17 @@ import 'package:dio/dio.dart';
 Dio dio = Dio();
 
 
-Future<void> complete_order()async{
+// ignore: non_constant_identifier_names
+Future<void> add_to_favorite()async{
   try {
     var response = await dio.post(
-      "https://nti-ecommerce-api-production-896c.up.railway.app/api/orders/complete/3",
+      "https://nti-ecommerce-api-production-896c.up.railway.app/api/add_to_favorite",
+      data: FormData.fromMap({
+        "product_id": "1",
+      }),
       options: Options(
         headers: {
-          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4ODkwOTgxNiwianRpIjoiY2EyZWYyY2MtZjhlNS00YjgwLWFlYjYtYjdjNzM1ZTg2ZDIzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6OSwibmJmIjoxNzg4OTA5ODE2LCJjc3JmIjoiM2E1NDE3MDUtMDI3MC00M2E5LThjNGYtYTM0ZTkyMjVmMzM4IiwiZXhwIjoxNzg4OTEwNzE2fQ.Hm5adwSoJYjgZcUlFANQcnLCdbQt1QToph6-tT3SOso"
+          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4ODkwNzQzNywianRpIjoiMjIzZjViYzctOThjNi00NDM4LWJlNDktMDdiMzdiZGZmZDU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6OSwibmJmIjoxNzg4OTA3NDM3LCJjc3JmIjoiNTEyMWUwZmYtM2EwMy00YWY4LWFiNjQtNjEwZWFiNzc3MzQ1IiwiZXhwIjoxNzg4OTA4MzM3fQ.Xmev00EiYol5q1NgJXU9WI0jfDC6O8MNItQpKJoyhT8"
         }
       )
       

@@ -21,7 +21,7 @@ Future<void> new_product()async{
       }),
       options: Options(
         headers: {
-          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4ODkwMzc4MywianRpIjoiZGExMjg2NTAtNTJlMC00OTMzLWI3OGItNGZjMjY0YzBlODlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6OSwibmJmIjoxNzg4OTAzNzgzLCJjc3JmIjoiMGRiNmQ1YzItNjNjZi00NjFmLTliNDQtNzVkYTY0ZWI5ZDc3IiwiZXhwIjoxNzg4OTA0NjgzfQ.sBatjaNMsUCRMxk0F_DK-izGtfc3jzNjgOmSFu6erkk"
+          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4ODkwODM1NCwianRpIjoiMWJlZTA5MjItYjdjOC00NmQxLTllYWQtZDdjNDA4NjQ2ZDYyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6OSwibmJmIjoxNzg4OTA4MzU0LCJjc3JmIjoiNjA4ZDI2OGMtZDZjNS00NzkzLWE2OWEtMWU0YmZhNDMxYTA2IiwiZXhwIjoxNzg4OTA5MjU0fQ.TGG_76x8Roh_SAvHSByzCFskcJ4cgFY_XAewFBO23Ww"
         }
       )
       
