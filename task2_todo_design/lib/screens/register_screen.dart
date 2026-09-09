@@ -26,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
 
-            SizedBox(height: 10.h),
+            SizedBox(height: 40.h),
 
             // Username
             Padding(
@@ -65,7 +65,7 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 15.h),
+            SizedBox(height: 30.h),
 
             // Password
             Padding(
@@ -84,10 +84,12 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
 
-                  suffixIcon: const Icon(
-                    Icons.lock_outline,
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.all(14.w),
+                    child: SvgPicture.asset(
+                      AppSvgs.unlock,
+                    ),
                   ),
-
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.r),
                   ),
@@ -110,15 +112,13 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 15.h),
+            SizedBox(height: 30.h),
 
             // Confirm Password
             Padding(
               padding: REdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
                 controller: confirmPasswordController,
-                obscureText: true,
-                obscuringCharacter: '*',
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',
 
@@ -129,8 +129,11 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
 
-                  suffixIcon: const Icon(
-                    Icons.lock_outline,
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.all(14.w),
+                    child: SvgPicture.asset(
+                      AppSvgs.unlock,
+                    ),
                   ),
 
                   border: OutlineInputBorder(
@@ -155,14 +158,25 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 25.h),
+            SizedBox(height: 30.h),
 
             // Register Button
             Padding(
               padding: REdgeInsets.symmetric(horizontal: 20),
-              child: SizedBox(
+              child: Container(
                 width: double.infinity,
-                height: 55.h,
+                height: 60.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromARGB(255, 51, 148, 55).withValues(alpha: 0.55),
+                      blurRadius: 6,
+                      spreadRadius: 1,
+                      offset: const Offset(0, 9),
+                    ),
+                  ],
+                ),
                 child: ElevatedButton(
                   onPressed: () {
                     print(usernameController.text);
@@ -170,7 +184,7 @@ class RegisterScreen extends StatelessWidget {
                     print(confirmPasswordController.text);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: const Color.fromARGB(255, 51, 148, 55),
                     foregroundColor: Colors.white,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
@@ -187,6 +201,43 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
 
+            SizedBox(height: 50.h),
+
+            // Already Have An Account?
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Already Have An Account?',
+                  style: TextStyle(
+                    fontSize: 15.sp,
+                    color: const Color.fromARGB(255, 11, 11, 11),
+                    fontWeight: FontWeight.w200
+                  ),
+                ),
+
+                SizedBox(width: 16.w),
+
+                TextButton(
+                  onPressed: () {
+                    // Login Screen
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 15.h),
           ],
         ),
