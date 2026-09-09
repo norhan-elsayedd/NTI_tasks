@@ -38,7 +38,7 @@ void main()async{
   //await get_categories();
   //await delete_category();
   //await edit_category();
-  //!await new_product();
+  await new_product();
   //await add_to_favorite();
   //await edit_product();
   //await get_products();
@@ -49,5 +49,5 @@ void main()async{
   //await place_order();
   //await complete_order();
   //await get_orders();
-  await cancel_order();
+  //await cancel_order();
 }

@@ -8,7 +8,7 @@ Future<void> new_product()async{
     var response = await dio.post(
       "https://nti-ecommerce-api-production-896c.up.railway.app/api/new_product",
       data: FormData.fromMap({
-        "name": "new test pr",
+        "name": "new pr1",
         "description": "product 1 description",
         "rating": "4.8",
         "best_seller": "1",
@@ -21,7 +21,7 @@ Future<void> new_product()async{
       }),
       options: Options(
         headers: {
-          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4ODkwODM1NCwianRpIjoiMWJlZTA5MjItYjdjOC00NmQxLTllYWQtZDdjNDA4NjQ2ZDYyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6OSwibmJmIjoxNzg4OTA4MzU0LCJjc3JmIjoiNjA4ZDI2OGMtZDZjNS00NzkzLWE2OWEtMWU0YmZhNDMxYTA2IiwiZXhwIjoxNzg4OTA5MjU0fQ.TGG_76x8Roh_SAvHSByzCFskcJ4cgFY_XAewFBO23Ww"
+          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4ODk1NTE4MiwianRpIjoiZDU4NjJhYzgtNTRjMi00NWU2LWI0ZDMtODgyOTY4Yjg0ZjA3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6OSwibmJmIjoxNzg4OTU1MTgyLCJjc3JmIjoiMjZkZjlkNjktY2EwNC00Nzc3LWJhNzMtNDBmYmQzOTliZGYxIiwiZXhwIjoxNzg4OTU2MDgyfQ.Lsi9xTAf1K27BmVzy6Qho5CnWUtOzTbH2CLJD61ayCo"
         }
       )
       
