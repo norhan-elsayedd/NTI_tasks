@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task2_todo_design/core/utilies/app_assests.dart';
 
 class LanguageScreen extends StatelessWidget {
-   LanguageScreen({super.key});
+   const LanguageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

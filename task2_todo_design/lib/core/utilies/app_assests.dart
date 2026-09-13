@@ -21,6 +21,10 @@ abstract class AppSvgs{
   static final String Arrow="assets/images/Arrow.svg";
   static final String Arrow2="assets/images/Arrow2.svg";
   static final String calender="assets/images/calendar.svg";
+  static final String empty="assets/images/empty.svg";
+  
+
+  static get lockOpen => null;
 
 
 

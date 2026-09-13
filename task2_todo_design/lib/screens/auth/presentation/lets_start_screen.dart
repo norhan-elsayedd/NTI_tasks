@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:task2_todo_design/core/components/custom_btn.dart';
 import 'package:task2_todo_design/core/utilies/app_assests.dart';
+import 'package:task2_todo_design/screens/auth/presentation/login_screen.dart';
 
 class LetsStartScreen extends StatelessWidget {
   const LetsStartScreen({super.key});
@@ -55,40 +57,14 @@ class LetsStartScreen extends StatelessWidget {
               
               //const Spacer(),
 
-              Container(
-                width: double.infinity,
-                height: 60.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color.fromARGB(255, 51, 148, 55).withValues(alpha: 0.55),
-                      blurRadius: 6,
-                      spreadRadius: 1,
-                      offset: const Offset(0, 9),
-                    ),
-                  ],
-                ),
-                child:  ElevatedButton(
-                  onPressed:(){
-
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 51, 148, 55),
-                    foregroundColor: Colors.white,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
+              CustomBtn(text: "Let’s Start", onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
                   ),
-                 child: Text("Let’s Start",
-                  style: TextStyle(
-                  fontSize: 19.sp,
-                  fontWeight: FontWeight.w300,
-                ),
-                 ),
-                ),
-              )
+                );
+              })
 
 
             ],
