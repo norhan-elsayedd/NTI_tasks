@@ -6,7 +6,7 @@ Dio dio = Dio();
 Future<void> login()async{
   try {
     var response = await dio.post(
-      "https://nti-ecommerce-api-production-896c.up.railway.app/api/login",
+      "https://nti-ecommerce-api-production-8a47.up.railway.app/api/login",
       data: FormData.fromMap({
         "email": "norhan@gmail.com",
         "password": "1102007",

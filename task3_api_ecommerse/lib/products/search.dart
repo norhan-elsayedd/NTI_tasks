@@ -6,7 +6,7 @@ Dio dio = Dio();
 Future<void> search()async{
   try {
     var response = await dio.get(
-      "https://nti-ecommerce-api-production-896c.up.railway.app/api/products/search?q=p",
+      "https://nti-ecommerce-api-production-896c.up.railway.app/api/products/search",
       queryParameters: {
         "q": "p",
       },
