@@ -24,7 +24,7 @@ abstract class AppSvgs{
   static final String empty="assets/images/empty.svg";
   
 
-  static get lockOpen => null;
+  static Null get lockOpen => null;
 
 
 

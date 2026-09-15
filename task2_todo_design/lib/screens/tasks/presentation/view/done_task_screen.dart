@@ -6,7 +6,7 @@ import 'package:task2_todo_design/core/utilies/app_colors.dart';
 import 'package:task2_todo_design/screens/tasks/presentation/view/done_task_screen.dart';
 
 class DoneTaskScreen extends StatefulWidget { 
-  const DoneTaskScreen({Key? key}) : super(key: key); 
+  const DoneTaskScreen({super.key}); 
  
   @override 
   State<DoneTaskScreen> createState() => _EditTaskScreenState(); 

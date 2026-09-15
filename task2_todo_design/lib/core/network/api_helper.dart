@@ -6,7 +6,7 @@ String? accessToken;
 String? refreshToken;
 
 class ApiHelper {
-  Dio _dio = Dio(BaseOptions(
+  final Dio _dio = Dio(BaseOptions(
     baseUrl: EndPoints.baseUrl
   ));
 

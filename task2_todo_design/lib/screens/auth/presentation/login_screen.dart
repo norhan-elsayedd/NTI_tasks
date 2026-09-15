@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task2_todo_design/core/helper/app_navigation.dart';
 import 'package:task2_todo_design/core/utilies/app_assests.dart';
 import 'package:task2_todo_design/core/utilies/app_colors.dart';
 import 'package:task2_todo_design/core/utilies/app_paddings.dart';
 import 'package:task2_todo_design/screens/auth/data/repo/auth_repo.dart';
 import 'package:task2_todo_design/screens/auth/presentation/register_screen.dart';
-import 'package:task2_todo_design/screens/home/presention/view/home1_screen.dart';
 import 'package:task2_todo_design/screens/home/presention/view/home2_screen.dart';
 
 import '../../../../core/components/custom_btn.dart';

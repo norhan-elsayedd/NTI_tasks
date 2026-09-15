@@ -6,6 +6,8 @@ import 'package:task2_todo_design/core/helper/app_navigation.dart';
 import 'package:task2_todo_design/core/utilies/app_assests.dart';
 import 'package:task2_todo_design/core/utilies/app_colors.dart';
 import 'package:task2_todo_design/core/utilies/app_paddings.dart';
+import 'package:task2_todo_design/screens/auth/data/models/user_model.dart';
+import 'package:task2_todo_design/screens/profile/presentation/view/profile_screen.dart';
 import 'package:task2_todo_design/screens/tasks/presentation/view/add_task_screen.dart';
 import 'package:task2_todo_design/screens/tasks/presentation/view/edit_task_screen.dart';
 import 'package:task2_todo_design/screens/home/data/repo/home_repo.dart';
@@ -19,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isLoading = false;
+  UserModel ? currentUser;
 
   @override
   void initState() {
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   String? errorMsg;
   List? tasks;
-  getTasks()async{
+  Future<void> getTasks()async{
 
     setState(() {
       errorMsg = null;
@@ -58,9 +61,17 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage(AppImages.flag),
-              radius: 30.r,
+            GestureDetector(
+              onTap: () {
+                MyNavigator.goTo(
+                  context,
+                  toPage: const ProfileScreen(),
+                );
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage(AppImages.flag),
+                radius: 30.r,
+              ),
             ),
             SizedBox(width: 16.w,),
             Column(
@@ -73,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: AppColors.black
                 ),),
                 SizedBox(height: 4.h,),
-                Text('',
+                Text('${currentUser?.username}',
                   style: TextStyle(
                       fontWeight: FontWeight.w300,
                       fontSize: 16.sp,
