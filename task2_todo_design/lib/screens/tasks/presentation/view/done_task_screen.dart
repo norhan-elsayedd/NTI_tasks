@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:task2_todo_design/core/utilies/app_assests.dart';
 import 'package:task2_todo_design/core/utilies/app_colors.dart';
-import 'package:task2_todo_design/screens/tasks/presentation/view/done_task_screen.dart';
 
 class DoneTaskScreen extends StatefulWidget { 
   const DoneTaskScreen({super.key}); 

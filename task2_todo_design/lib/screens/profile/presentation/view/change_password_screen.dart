@@ -5,7 +5,7 @@ import 'package:task2_todo_design/core/utilies/app_assests.dart';
 import 'package:task2_todo_design/screens/profile/data/repo/change_passward_repo.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
-  ChangePasswordScreen({super.key});
+  const ChangePasswordScreen({super.key});
 
   @override
   State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();

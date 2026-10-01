@@ -1,166 +1,133 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_svg/svg.dart';
-// import 'package:task2_todo_design/core/utilies/app_assests.dart';
-// import 'package:task2_todo_design/screens/add_task_screen.dart';
-// import 'package:task2_todo_design/screens/auth/data/models/task_model.dart';
-// import 'package:task2_todo_design/screens/home/presention/view/home2_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:task2_todo_design/core/utilies/app_assests.dart';
+import 'package:task2_todo_design/screens/tasks/presentation/view/add_task_screen.dart';
 
-// class Home1Screen extends StatefulWidget {
-//   const Home1Screen({super.key});
+class Home1Screen extends StatelessWidget {
+  const Home1Screen({super.key});
 
-//   @override
-//   State<Home1Screen> createState() => _Home1ScreenState();
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                left: 20.w,
+                top: 10.h,
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 48.w,
+                    height: 48.w,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    clipBehavior: Clip.antiAlias,
+                    child: Image.asset(
+                      AppImages.flag,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
 
-// class _Home1ScreenState extends State<Home1Screen> {
+                  SizedBox(width: 22.w),
 
-//   List<TaskModel>tasks=[];
+                  Padding(
+                    padding: EdgeInsets.only(top: 2.h),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Hello!',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(height: 4.h),
+                        Text(
+                          'Norhan Elsayed',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 40.h),
+                child: Image.asset(
+                  AppImages.no_task,
+                  width: 400.w,
+                  height: 350.h,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
 
-//       body: SafeArea(
-//         child: Stack(
-//           children: [
-            
-//             Padding(
-//               padding: EdgeInsets.only(
-//                 left: 20.w,
-//                 top: 10.h,
-//               ),
-//               child: Row(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
+            Positioned(
+              right: 25.w,
+              bottom: 25.h,
+              child: GestureDetector(
+                onTap: () async {
+                  final result = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AddTaskScreen(),
+                    ),
+                  );
 
-//                   // Flag Image
-//                   Container(
-//                     width: 48.w,
-//                     height: 48.w,
-//                     decoration: const BoxDecoration(
-//                       shape: BoxShape.circle,
-//                     ),
-//                     clipBehavior: Clip.antiAlias,
-//                     child: Image.asset(
-//                       AppImages.flag,
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-
-//                   SizedBox(width: 22.w),
-
-//                   // Hello + Name
-//                   Padding(
-//                     padding: EdgeInsets.only(top: 2.h),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-
-//                         Text(
-//                           'Hello!',
-//                           style: TextStyle(
-//                             fontSize: 12.sp,
-//                             fontWeight: FontWeight.w300,
-//                             color: Colors.black,
-//                           ),
-//                         ),
-
-//                         SizedBox(height: 4.h),
-
-//                         Text(
-//                           'Norhan Elsayed',
-//                           style: TextStyle(
-//                             fontSize: 16.sp,
-//                             fontWeight: FontWeight.w300,
-//                             color: Colors.black,
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-
-            
-//             Center(
-//               child: Padding(
-//                 padding: EdgeInsets.only(
-//                   top: 40.h,
-//                 ),
-//                 child: Column(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: [
-//                     Image.asset(
-//                       AppImages.no_task,
-//                       width: 400.w,
-//                       height: 350.h,
-//                       fit: BoxFit.contain,
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-
-//             Positioned(
-//               right: 25.w,
-//               bottom: 25.h,
-//               child: GestureDetector(
-//                 onTap: () async {
-//                   TaskModel? task = await Navigator.push(
-//                     context,
-//                     MaterialPageRoute(
-//                       builder: (context) => AddTaskScreen(),
-//                     ),
-//                   );
-
-//                   if (task != null) {
-//                     setState(() {
-//                       tasks.add(task);
-//                     });
-
-//                     Navigator.push(
-//                       context,
-//                       MaterialPageRoute(
-//                         builder: (context) => Home2Screen(
-//                           tasks: tasks,
-//                         ),
-//                       ),
-//                     );
-//                   }
-//                 },
-//                 child: Container(
-//                   width: 50.w,
-//                   height: 50.h,
-//                   decoration: BoxDecoration(
-//                     color: const Color.fromARGB(255, 51, 148, 55),
-//                     shape: BoxShape.circle,
-//                     boxShadow: [
-//                       BoxShadow(
-//                         color: const Color.fromARGB(255, 51, 148, 55)
-//                             .withValues(alpha: 0.35),
-//                         blurRadius: 12,
-//                         spreadRadius: 2,
-//                         offset: const Offset(0, 6),
-//                       ),
-//                     ],
-//                   ),
-//                   child: Center(
-//                     child: SvgPicture.asset(
-//                       AppSvgs.Plus,
-//                       width: 25.w,
-//                       height: 25.h,
-//                       fit: BoxFit.contain,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+                  if (result == true && context.mounted) {
+                    Navigator.pop(context, true);
+                  }
+                },
+                child: Container(
+                  width: 50.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 51, 148, 55),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color.fromARGB(
+                          255,
+                          51,
+                          148,
+                          55,
+                        ).withValues(alpha: 0.35),
+                        blurRadius: 12,
+                        spreadRadius: 2,
+                        offset: const Offset(0, 6),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      AppSvgs.Plus,
+                      width: 25.w,
+                      height: 25.h,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

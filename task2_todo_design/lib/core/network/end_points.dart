@@ -10,4 +10,5 @@ abstract class EndPoints {
 
   static const String updateProfile = 'update_profile';
   static const String changePassword = 'change_password';
+
 }
